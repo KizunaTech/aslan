@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get '/home', to: 'home#index'
   root to: 'home#index'
 
-  get '/post', to: 'posts#post'
+  get '/posts/:user/:id', to: "posts#show", as: 'post'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
