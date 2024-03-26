@@ -1,1 +1,6 @@
-<h2>Sample Home Post</h2>
+<h2>Home Post</h2>
+
+<% @posts.each do |post| %>
+    <%= post.content %>
+<% end %>
+<%# <a href="/destination_page">Create Post</a> %>
