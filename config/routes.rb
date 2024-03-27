@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # get '/home', to: 'home#index'
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
   root to: 'home#index'
 
-  get '/posts/:user/:id', to: "posts#show", as: 'post'
+  get '/posts/:id', to: "posts#show", as: 'post'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
