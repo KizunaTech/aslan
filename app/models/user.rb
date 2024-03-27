@@ -4,10 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :saved_posts
-  has_many :posts, through: :saved_posts
-
-  def saved_posts_count
-    saved_posts.count
-  end
+  has_many :posts, dependent: :destroy
 end
