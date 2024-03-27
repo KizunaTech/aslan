@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   root to: 'home#index'
 
-  get '/posts/:id', to: "posts#show", as: 'post'
 
+  get '/posts/compose', to: "posts#new", as: :new_post
+  get '/posts/:id', to: "posts#show", as: :post
+  post '/posts', to: "posts#create", as: :posts
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

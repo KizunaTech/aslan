@@ -1,8 +1,9 @@
 <h2>Home Post</h2>
 
 <% @posts.each do |post| %>
-    <div class= "post">
-        <%= post.content %>
-    </div>
+    <%= link_to post_path(post) %>
+        <div class= "post">
+            <%= post.content %>
+        </div>
 <% end %>
-<%# <a href="/destination_page">Create Post</a> %>
+<a href="/posts/compose">Create Post</a>
