@@ -1,3 +1,5 @@
 <h1>EDIT POST</h1>
 
 <%= render partial: "form", locals: {post: @post}%>
+
+<%= button_to "Delete", @post, method: :delete, data: {turbo_confirm: "Confirm post deletion?"} %>
