@@ -1,1 +1,19 @@
-<h2>Sample Home Post</h2>
+<br />
+
+<h2>Home Page</h2>
+
+<% @posts.each do |post| %>
+  <%= link_to post_url(post) do %>
+    <div class="post">
+      <%= post.content %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Create Post", new_post_path %>
+<% else %>
+  <%= link_to "Login or Sign Up", new_user_session_path %>
+<% end %>
+
+<br />

@@ -1,0 +1,10 @@
+<h1>Post Page</h1>
+Username: <%= @post.user.username%>
+First Name: <%= @post.user.first_name %>
+Last Name: <%= @post.user.last_name %>
+<%= @post.content %>
+
+
+<% if user_signed_in? && current_user.id == @post.user.id %>
+  <%= link_to "Edit Post", edit_post_path(@post) %>
+<% end %>
