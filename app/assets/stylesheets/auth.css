@@ -1,0 +1,53 @@
+#user_email, #user_password, #user_password_confirmation {
+    width: 100%;
+    height: 35px;
+    border: #ccc solid 1px;
+    border-radius: 8px;
+    position: relative;
+}
+    
+input {
+    padding: 0 20px 0 40px;
+    margin: 5px 0;
+    box-shadow: none;
+    outline: none;
+}
+      
+input::placeholder {
+    color: #ccc;
+}
+
+.field ion-icon {
+    position: absolute;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    transform: translate(60%, 80%);
+}
+input[type='submit'] {
+    padding: 12px;
+    width: 100%;
+    font-size: large;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    /* Initial background gradient */
+    background: linear-gradient(to right, #FF964F, #F57C30, #EC6911);
+    background-size: 200% 100%;  /* Enlarge background to double its width */
+    background-position: right bottom;
+    font-weight: 600;
+    color: white;
+
+    /* Smooth transition effect */
+    transition: background-position 0.5s ease;
+}
+input[type='submit']:hover {
+    background-position: left bottom;
+}
+h2 {
+    padding-bottom: 10px;
+}
+.container--small {
+    width: 300px;
+    margin: auto;
+}

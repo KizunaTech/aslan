@@ -33,3 +33,11 @@
     height: 44px;
     filter: brightness(0%);
  }
+ .main {
+   padding-left: 16px;
+   padding-right: 16px;
+ }
+ footer {
+   position: absolute;
+   bottom: 0;
+ }
