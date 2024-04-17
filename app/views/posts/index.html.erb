@@ -1,0 +1,9 @@
+<h1>All Posts</h1>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= link_to post.title, post %></h2>
+    <p><%= post.body.truncate(100) %></p>
+    <small>Posted by: <%= post.user.username %></small>
+  </div>
+<% end %>
