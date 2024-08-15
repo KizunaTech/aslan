@@ -11,6 +11,24 @@
   </div>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <ion-icon name="at-outline"></ion-icon>
+    <%= f.text_field :username, autofocus: true, class: "input--round" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <ion-icon name="person-outline"></ion-icon>
+    <%= f.text_field :first_name, autofocus: true, class: "input--round" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <ion-icon name="person-outline"></ion-icon>
+    <%= f.text_field :last_name, autofocus: true, class: "input--round" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

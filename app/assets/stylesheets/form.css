@@ -1,0 +1,44 @@
+.form__title, .form__verse, .form__content {
+    width: 100%;
+    font-size: 24px;
+    resize: none;
+    height: 48px;
+    border: none;
+    border-bottom: #ccc solid 1px;
+    padding: 12px 16px;
+    font-family: 'Inter', sans-serif;
+}
+.form__content {
+    font-size: 14px;
+    height: 30vh;
+    border: none;
+}
+.form__options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 16px;
+}
+.form__options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.form__options button ion-icon {
+    width: 20px;
+    height: 20px;
+    color: #3a3a3a;
+}
+.form__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #3a3a3a;
+    margin-left: auto;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    cursor: pointer;
+}
