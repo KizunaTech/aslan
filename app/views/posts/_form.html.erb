@@ -1,8 +1,15 @@
 <%= form_with model: post do |form| %>
-    <div>
-        <%= form.label :content %>
-        <%= form.text_field :content %>
-    </div>
 
-    <%= form.button %>
+    <%= form.text_area :title, placeholder: "Title of Post", class: "form__title" %>
+    <%= form.text_area :verse, placeholder: "Bible Verse Referenced", class: "form__verse" %>
+    <%= form.text_area :content, placeholder: "What do you want to share?", class: "form__content" %>
+    <%# <div>
+        <label class="picture" for="picture__input" tabIndex="0">
+            <span class="picture__image"></span>
+        </label>
+        <input type="file" accept="image/png, image/jpeg, image/jpg" name="picture__input" id="picture__input">
+    </div> %>
+    <%= form.file_field :media %>
+    <%= form.submit "Upload" %>
+
 <% end %>

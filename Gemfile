@@ -61,3 +61,6 @@ gem "devise", "~> 4.9"
 group :development, :test do
   gem 'dotenv-rails'
 end
+
+gem "cloudinary"
+gem "carrierwave"

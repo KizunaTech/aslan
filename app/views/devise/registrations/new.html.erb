@@ -1,26 +1,31 @@
+<div class="container--small">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :email %><br />
+    <ion-icon name="mail-outline"></ion-icon>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <ion-icon name="at-outline"></ion-icon>
+    <%= f.text_field :username, autofocus: true, class: "input--round" %>
   </div>
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <ion-icon name="person-outline"></ion-icon>
+    <%= f.text_field :first_name, autofocus: true, class: "input--round" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <ion-icon name="person-outline"></ion-icon>
+    <%= f.text_field :last_name, autofocus: true, class: "input--round" %>
   </div>
 
   <div class="field">
@@ -28,11 +33,13 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
+    <ion-icon name="lock-open-outline"></ion-icon>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
+    <ion-icon name="lock-closed-outline"></ion-icon>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
@@ -42,3 +49,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

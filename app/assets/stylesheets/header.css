@@ -1,3 +1,42 @@
 .header {
     padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        padding: 10px 32px;
+        margin-bottom: 24px;
+    }
+    .nav-list {
+        list-style-type: none; /* Remove bullet points */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        display: flex; /* Arrange list items in a row */
+    }
+
+    .nav-list li {
+        margin-right: 20px; /* Space between items */
+    }
+
+    .nav-list li:last-child {
+        margin-right: 0; /* Remove space after the last item */
+    }
+
+    .nav-list a {
+        text-decoration: none; /* Remove underline from links */
+        color: #000; /* Default text color */
+        padding: 10px 15px; /* Add padding around the links */
+        display: block; /* Make the entire li area clickable */
+    }
+
+    .nav-list a:hover {
+        background-color: #f0f0f0; /* Change background color on hover */
+        color: #007bff; /* Change text color on hover */
+    }
 }

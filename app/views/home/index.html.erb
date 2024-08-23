@@ -1,19 +1,44 @@
-<br />
-
-<h2>Home Page</h2>
-
-<% @posts.each do |post| %>
-  <%= link_to post_url(post) do %>
-    <div class="post">
-      <%= post.content %>
-    </div>
-  <% end %>
-<% end %>
-
 <% if user_signed_in? %>
-  <%= link_to "Create Post", new_post_path %>
+  <div class="gridbob">
+  <% @posts.each_with_index do |post, index| %>
+      <div class="post container grid-item <%= "grid__item-#{index + 1}" %>">
+        <div class="post__profile">
+          <img src="<%= post.user.profile ? post.user.profile : "https://simplyilm.com/wp-content/uploads/2017/08/temporary-profile-placeholder-1.jpg" %>" />
+          <span class="post__name">
+            <span class="post__fullname"><%= post.user.first_name %> <%= post.user.last_name %></span>
+            <span class="post__username"><%= post.user.username %></span>
+          </span>
+          <div class="post__icons">
+            <% if current_user.id == post.user.id %>
+              <a href="<%= edit_post_path(post) %>">
+                <ion-icon name="create-outline"></ion-icon>
+              </a>
+            <% else %>
+              <button><ion-icon name="chatbubble-outline"></ion-icon></button>
+              <% if Bookmark.exists?(post_id: post.id, user_id: current_user.id) %>
+                <%= button_to post_bookmark_path(post), method: :delete, data: {confirm: "Are you sure?"} do %>
+                  <ion-icon name="bookmark"></ion-icon>
+                <% end %>
+              <% else %>
+                <%= button_to post_bookmarks_path(post), method: :post do %>
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <%= link_to post_url(post) do %>
+          <div class="post__media">
+            <img src="<%= post.media.url ? post.media.url : "https://i.pinimg.com/originals/ac/80/72/ac8072b89fa92207803f87453dc699f0.jpg" %>">
+          </div>
+        <% end %>
+        <div class="post__subcontainer">
+          <p class="post__verse"><b><%= post.verse %></b> <%= truncate_text("In the beginning God created the heavens and the earth.", 100) %></p>
+          <p class="post__content"><b><%= post.title %></b> <%= truncate_text(post.content, 150, post_url(post)) %></p>
+        </div>
+      </div>
+  <% end %>
+  </div>
 <% else %>
   <%= link_to "Login or Sign Up", new_user_session_path %>
 <% end %>
-
-<br />
