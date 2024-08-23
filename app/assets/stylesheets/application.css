@@ -40,3 +40,17 @@
  .main {
    padding-bottom: 50px;
  }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets */
+  .main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+    /* Styles for tablets */
+  .main {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}

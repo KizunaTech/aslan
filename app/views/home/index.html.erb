@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-  <% @posts.each do |post| %>
-      <div class="post container">
+  <div class="gridbob">
+  <% @posts.each_with_index do |post, index| %>
+      <div class="post container grid-item <%= "grid__item-#{index + 1}" %>">
         <div class="post__profile">
           <img src="<%= post.user.profile ? post.user.profile : "https://simplyilm.com/wp-content/uploads/2017/08/temporary-profile-placeholder-1.jpg" %>" />
           <span class="post__name">
@@ -37,6 +38,7 @@
         </div>
       </div>
   <% end %>
+  </div>
 <% else %>
   <%= link_to "Login or Sign Up", new_user_session_path %>
 <% end %>
