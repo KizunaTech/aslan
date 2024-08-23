@@ -9,7 +9,7 @@
         </label>
         <input type="file" accept="image/png, image/jpeg, image/jpg" name="picture__input" id="picture__input">
     </div> %>
-    <input type="file" accept="image/png, image/jpeg, image/jpg" name="picture__input">
-    <button type="submit" class="form__submit"><ion-icon name="send"></ion-icon> Post</button>
+    <%= form.file_field :media %>
+    <%= form.submit "Upload" %>
 
 <% end %>

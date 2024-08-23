@@ -6,4 +6,5 @@ class Post < ApplicationRecord
     has_many :bookmarkers, through: :bookmarks, source: :user
     has_many :comments
     has_many :user_comments, through: :comments
+    mount_uploader :media, ImageUploader
 end
