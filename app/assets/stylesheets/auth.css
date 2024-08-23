@@ -1,4 +1,4 @@
-.input--round, #user_email, #user_password, #user_password_confirmation {
+.input--round, #user_email, #user_password, #user_password_confirmation, #user_current_password {
     width: 100%;
     height: 35px;
     border: #ccc solid 1px;
