@@ -16,7 +16,7 @@ test:
 
 production:
   <<: *default
-  database: aslan_production
-  username: your_production_username
-  password: your_production_password
-  host: your_production_host
+  database: <%= ENV['POSTGRES_DB'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: <%= ENV['POSTGRES_HOST'] %>
